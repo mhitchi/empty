@@ -1,6 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//ask for length
+var length = prompt("How many characters will your password be? Enter a number between 8 and 128");
+
+//ask for character type
+var type = prompt("Enter a character type: special, numeric, uppercase, lowercase.");
 
 // Write password to the #password input
 function writePassword() {
