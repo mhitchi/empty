@@ -34,7 +34,7 @@ function generatePassword() {
 // Write password to the #password input
 function writePassword() {
   //password is the retVal from generatePassword()
-  var password = generatePassword();
+  var password = generatePassword(length);
   //passwordText fills HTML id password
   var passwordText = document.querySelector("#password");
 
