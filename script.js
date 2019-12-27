@@ -29,7 +29,6 @@ function generatePassword() {
     retVal += charSet.charAt(Math.floor(Math.random() * charSet.length));
     //retVal += charSet[Math.floor(Math.random() * n)];
   }
-  console.log(retVal);
   return retVal;
 }
 
