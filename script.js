@@ -25,7 +25,8 @@ function generatePassword() {
   //for (var i = 0, n = charSet.length; i < length; i++) {
     for (var i = 0, n = length; i < length; i++) {
     //picks a character within charSet at index of random number
-    retVal += charSet.charAt(Math.floor(Math.random() * n));
+    //retVal += charSet.charAt(Math.floor(Math.random() * n));
+    retVal += charSet[Math.floor(Math.random() * n)];
   }
   console.log(retVal);
   return retVal;
@@ -34,7 +35,7 @@ function generatePassword() {
 // Write password to the #password input
 function writePassword() {
   //password is the retVal from generatePassword()
-  var password = generatePassword(length);
+  var password = generatePassword();
   //passwordText fills HTML id password
   var passwordText = document.querySelector("#password");
 
