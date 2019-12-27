@@ -22,10 +22,12 @@ function generatePassword() {
   } 
   //return value
   var retVal = "";
-  for (var i = 0, n = charSet.length; i < length; i++) {
+  //for (var i = 0, n = charSet.length; i < length; i++) {
+    for (var i = 0, n = length; i < length; i++) {
     //picks a character within charSet at index of random number
     retVal += charSet.charAt(Math.floor(Math.random() * n));
   }
+  console.log(retVal);
   return retVal;
 }
 
