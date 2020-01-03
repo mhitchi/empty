@@ -11,14 +11,15 @@ var charType = prompt("Enter a character type: special, numeric, uppercase, lowe
 function generatePassword() {
   //evaluate character type
   var charSet = "";
+  //shift all to lowercase
   var charLower = charType.toLowerCase();
-  if( charLower === "lowercase" ) {
+  if( charLower.includes("lowercase") ) {
     charSet = "abcdefghijklmnopqrstuvwxyz";
-  } else if( charLower === "uppercase" ) {
+  } else if( charLower.includes("uppercase") ) {
     charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  } else if( charLower === "numeric" ) {
+  } else if( charLower.includes("numeric") ) {
     charSet = "0123456789";
-  } else if( charLower === "special" ) {
+  } else if( charLower.includes("special") ) {
     charSet = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   } 
   //return value
@@ -42,13 +43,13 @@ function writePassword() {
   //passwordText is retVal
   passwordText.value = password;
 
-  //copyBtn.removeAttribute("disabled");
-  //copyBtn.focus();
+  copyBtn.removeAttribute("disabled");
+  copyBtn.focus();
 }
 
-//function copyToClipboard() {
+function copyToClipboard() {
   // BONUS 
-//}
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
