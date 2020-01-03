@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var copyBtn = document.querySelector("#copy");
 
 //ask for length
 var length = Number(prompt("How many characters will your password be? Enter a number between 8 and 128"));
@@ -33,10 +34,12 @@ function generatePassword() {
   return retVal;
 }
 
+//password is the retVal from generatePassword()
+var password = generatePassword();
+
 // Write password to the #password input
 function writePassword() {
-  //password is the retVal from generatePassword()
-  var password = generatePassword();
+  
   //passwordText fills HTML id password
   var passwordText = document.querySelector("#password");
 
@@ -48,10 +51,15 @@ function writePassword() {
 }
 
 function copyToClipboard() {
-  // BONUS 
+  var copyText = document.querySelector("#password");
+  copyText.select();
+  document.execCommand('copy');
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Add event listener to copy button
+copyBtn.addEventListener("click", copyToClipboard);
 
 // BONUS EVENT LISTENER
